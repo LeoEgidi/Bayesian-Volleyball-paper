@@ -1,0 +1,32 @@
+
+## INTRO
+
+In the interests of transparency and reproducibility, this folder contains all the readable R code required to 
+replicate the results and the plots of the paper "A Bayesian Quest for Finding a Unified Model for Predicting
+Volleyball Games", by Leonardo Egidi (University of Trieste) and Ioannis Ntzoufras (Athens University of Economics and Business).
+
+## DATA DESCRIPTION
+
+Data about the Italian SuperLega 2017/2018 are contained in the file "Regular_season_2017-18_Set_by_set_Ita.csv", whereas data about
+the playoff phase of the Italian SuperLega are contained in the file "playoff_season_2017-18_ita.csv". Each row is a measurement
+for a given team in a given match. The files contain the following columns names:
+
+ - day : match day
+ - team: team names
+ - set: number of match sets
+ - set1, set2, set3, set4, set5: number of points for each set (blank cell if the set has not been played)
+
+
+## HOW TO RUN THE CODE
+
+Each R file is numbered with respect to the section where the code is used. For instance, the random effect models in Section 3.2 is 
+renamed in the following way: "3.2-<model_name>.R", and so on.
+The file "macro.R" is the main file used to launch all the code. The user can use the "Source" command in the RStudio consolle to
+run the models and replicate all the results. 
+The file "volley_ita.R" contains all the data acquisition and data cleaning procedures.
+
+
+## NOTES
+
+The code relies on JAGS software. So, install JAGS on your laptop before running the code. The list of required packages is included 
+at the beginning of the "macro.R" file.
