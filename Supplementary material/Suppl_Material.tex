@@ -61,12 +61,15 @@
 
 
 \pagenumbering{Roman}
-\renewcommand\thefigure{\Roman{figure}}
+%\renewcommand\thefigure{\Roman{figure}}
+%\renewcommand\thefigure{\Alph{section}.\arabic{figure}}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
 
 
 \newtheorem{thm}{Theorem}
 
-\title[]{Electronic Supplementary Material for the paper: `A Bayesian Quest for Finding a Unified Model for Predicting Volleyball Games'}
+\title[]{Electronic Supplementary Material for the paper:\\ `A Bayesian Quest for Finding a Unified Model for Predicting Volleyball Games'}
 \author[Egidi and Ntzoufras]{Leonardo Egidi}
 \address{Dipartimento di Scienze Economiche, Aziendali, Matematiche e Statistiche `Bruno de Finetti',
 	Universit\`{a} degli Studi di Trieste,
@@ -86,9 +89,10 @@
 
 \maketitle
 
+\appendix 
 
 
-\section*{Sensitivity analysis}
+\section{Sensitivity analysis}
 
 To account for robustness in our posterior estimates, we performed some sensitivity tests for the model's parameters (see Table 4 in the paper for a comprehensive summary of the final selected model). Sensitivity plots may be retrieved in the Supplementary Material folder available at \url{https://github.com/LeoEgidi/Bayesian-Volleyball-paper}. Specifically, we let vary: 
 
@@ -150,22 +154,29 @@ Then, according to these checks, we feel our analysis are robust enough to justi
 \label{figS4}
 \end{figure}
 
-\section*{Set dynamic abilities}
 
-For completeness, we depict in Figure~\ref{fig16} the predictive intervals for the dynamic set abilities (model 11 of Table 2 in the paper).
+\clearpage 
+\newpage
 
-\begin{figure}
+\section{Set dynamic abilities}
+
+For completeness, we depict in Figure~\ref{fig16} the predictive intervals for the dynamic set abilities (model 11 of Table 2 in the paper), with $\sigma^2_{\alpha} \sim \mathsf{InvGamma}(2,2)$.
+
+ 
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.75]{Dynamics/NegBin_ZIP_dynamicset_abilities.pdf}
 \caption{Posterior mean and 95\% density interval for the dynamic set abilities parameters $\bm{\alpha}$, Italian SuperLega 2017/2018 (model 11 in Table 2 of the paper).}
 \label{fig16}
 \end{figure}
 
-\section*{Trace and density plots}
+\clearpage 
+\newpage 
+\section{Graphical convergence diagnostics}
 
 We depict in Figure~\ref{figS6}--\ref{figS7} the trace and the density plots from the MCMC sampling for the parameters: $\mu, \theta, H^{point}, H^{set},\lambda, m$ (\texttt{rjags}, 1000 iterations, burn-in of 100, 3 chains).
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{Traceplots/Traceplots.pdf}\\
 \caption{Trace plots for the parameters: $\mu, \theta, H^{point}, H^{set},\lambda, m$ (model 9 in the paper).}
